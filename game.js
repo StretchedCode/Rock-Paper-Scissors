@@ -23,6 +23,13 @@ function playRound(playerSelection, computerSelection){
     let matchPoint;
 
     if ((computerSelection == 'rock' && playerSelection == 'scissors') || (computerSelection == 'paper' && playerSelection == 'rock') || (computerSelection == 'scissors' && playerSelection == 'paper')){
-
+        matchPoint = 0;
     }
+
+    else if ((computerSelection == 'scissors' && playerSelection == 'rock') || (computerSelection == 'rock' && playerSelection == 'paper') || (computerSelection == 'paper' && playerSelection == 'scissors')){
+        matchPoint = 1;
+    }
+
+    return matchPoint;
 }
+playRound();
