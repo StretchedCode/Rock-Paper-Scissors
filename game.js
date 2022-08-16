@@ -29,7 +29,9 @@ function playRound(playerSelection, computerSelection){
     else if ((computerSelection == 'scissors' && playerSelection == 'rock') || (computerSelection == 'rock' && playerSelection == 'paper') || (computerSelection == 'paper' && playerSelection == 'scissors')){
         matchPoint = 1;
     }
-
+    else{
+        matchPoint = 2;
+    }
     return matchPoint;
 }
 playRound();
