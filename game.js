@@ -13,8 +13,9 @@ function getComputerChoice (){
         result = 'scissors'
     }
 }
-console.log(getComputerChoice());
 
 function playRound(playerSelection, computerSelection){
 
+    computerSelection = getComputerChoice();
+    playerSelection = prompt('What would you like to play?').toLowerCase();
 }
