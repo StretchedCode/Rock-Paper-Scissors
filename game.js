@@ -34,4 +34,26 @@ function playRound(playerSelection, computerSelection){
     }
     return matchPoint;
 }
-playRound();
+
+function game(){
+
+    let playerScore = 0;
+    let cpuScore = 0;
+    let draw = 0;
+
+    for (let i = 0; i < 5; i++){
+        let results = playRound();
+
+        if (results == 0){
+            cpuScore += 1;
+        }
+        else if (results == 1){
+            playerScore += 1;
+        }
+        else{
+            draw += 1;
+        }
+
+    }
+    console.log(`Currently, the cpu score is: ${cpuScore}.\nThe player score is: ${playerScore}.\n${draw}'s have occurred.`);
+}
