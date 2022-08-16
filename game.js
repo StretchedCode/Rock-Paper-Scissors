@@ -12,10 +12,17 @@ function getComputerChoice (){
     else{
         result = 'scissors'
     }
+    return result;
 }
 
 function playRound(playerSelection, computerSelection){
 
     computerSelection = getComputerChoice();
     playerSelection = prompt('What would you like to play?').toLowerCase();
+
+    let matchPoint;
+
+    if ((computerSelection == 'rock' && playerSelection == 'scissors') || (computerSelection == 'paper' && playerSelection == 'rock') || (computerSelection == 'scissors' && playerSelection == 'paper')){
+
+    }
 }
