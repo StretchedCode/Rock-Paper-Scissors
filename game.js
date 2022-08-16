@@ -55,5 +55,7 @@ function game(){
         }
 
     }
-    console.log(`Currently, the cpu score is: ${cpuScore}.\nThe player score is: ${playerScore}.\n${draw}'s have occurred.`);
+    console.log(`Currently, the cpu score is: ${cpuScore}.\nThe player score is: ${playerScore}.\n${draw} draw's have occurred.`);
 }
+
+game();
