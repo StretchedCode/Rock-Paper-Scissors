@@ -48,9 +48,18 @@ function game(results){
     }
     else{
         draw += 1;
-    }    
-    resultDiv.textContent = (`Currently, the cpu score is: ${cpuScore}.\nThe player score is: ${playerScore}.\n${draw} draw's have occurred.`);
-    body.appendChild(resultDiv);
+    }
+    
+    if (cpuScore == 5){
+        resultDiv.textContent = 'The Cpu is the winner!';
+    }
+    else if (playerScore == 5){
+        resultDiv.textContent = 'The player is the winner!';
+    }else{
+        resultDiv.textContent = (`Currently, the cpu score is: ${cpuScore}.\nThe player score is: ${playerScore}.\n${draw} draw's have occurred.`);
+        body.appendChild(resultDiv);
+    }
+    
 }
 
 const buttons = document.querySelectorAll('button');
