@@ -18,7 +18,6 @@ function getComputerChoice (){
 function playRound(playerSelection, computerSelection){
 
     computerSelection = getComputerChoice();
-    playerSelection = prompt('What would you like to play?').toLowerCase();
 
     let matchPoint;
 
@@ -35,27 +34,35 @@ function playRound(playerSelection, computerSelection){
     return matchPoint;
 }
 
-function game(){
-
     let playerScore = 0;
     let cpuScore = 0;
     let draw = 0;
 
-    for (let i = 0; i < 5; i++){
-        let results = playRound();
+function game(results){
 
-        if (results == 0){
-            cpuScore += 1;
-        }
-        else if (results == 1){
-            playerScore += 1;
-        }
-        else{
-            draw += 1;
-        }
-
+    if (results == 0){
+        cpuScore += 1;
     }
-    console.log(`Currently, the cpu score is: ${cpuScore}.\nThe player score is: ${playerScore}.\n${draw} draw's have occurred.`);
+    else if (results == 1){
+        playerScore += 1;
+    }
+    else{
+        draw += 1;
+    }    
+    resultDiv.textContent = (`Currently, the cpu score is: ${cpuScore}.\nThe player score is: ${playerScore}.\n${draw} draw's have occurred.`);
+    body.appendChild(resultDiv);
 }
 
-game();
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach(buttons => {
+    
+    buttons.addEventListener('click', function(e){
+
+        game(playRound(this.className));
+    });
+
+});
+
+const body = document.querySelector('body');
+const resultDiv = document.createElement('div');
